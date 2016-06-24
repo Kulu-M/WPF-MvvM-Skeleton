@@ -1,0 +1,17 @@
+﻿<Window x:Class="MvvM.CustomerViewModels.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <Label>Customer Name:</Label>
+        
+        <!--Change "UpdateSourceTrigger", otherwise UpdateCommand will only be triggered when "LostFocus" eventuates-->
+        <TextBox Text="{Binding Customer.Name, UpdateSourceTrigger=PropertyChanged}" Width="330"/>
+        
+        <Button Command="{Binding UpdateCommand}" Width="85">Update</Button>
+    </StackPanel>
+</Window>
